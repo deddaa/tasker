@@ -1,3 +1,5 @@
+import { BASE_URL } from "./authenticate";
+
 const addbtn = document.getElementById("add-btn");
 addbtn.addEventListener("click", () => {
   window.location.href = "/formulaire";
@@ -63,7 +65,7 @@ const getTask = async () => {
     const userID = localStorage.getItem("userID");
     console.log(userID);
     const response = await fetch(
-      `http://localhost:5000/api/tasks/tasks/${userID}`,
+      `${BASE_URL}/api/tasks/tasks/${userID}`,
       {},
     );
 
@@ -81,7 +83,7 @@ const updateTask = async (id, CurrentStatus) => {
   console.log(id, newStatus);
   try {
     const response = await fetch(
-      `http://localhost:5000/api/tasks/puttasks/${id}`,
+      `${BASE_URL}/api/tasks/puttasks/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -112,7 +114,7 @@ const goBackTask = async (id, CurrentStatus) => {
   console.log(id, newStatus);
   try {
     const response = await fetch(
-      `http://localhost:5000/api/tasks/puttasks/${id}`,
+      `${BASE_URL}/api/tasks/puttasks/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -144,7 +146,7 @@ const saveEdit = async () => {
   }
 
   try {
-    const response = await fetch(`http://localhost:5000/api/tasks/puttaskname/${currentEditId}`, {
+    const response = await fetch(`${BASE_URL}/api/tasks/puttaskname/${currentEditId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
@@ -165,7 +167,7 @@ const deleteTask = async (id) => {
   try {
     console.log(id);
     const response = await fetch(
-      `http://localhost:5000/api/tasks/deletetasks/${id}`,
+      `${BASE_URL}/api/tasks/deletetasks/${id}`,
       {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },

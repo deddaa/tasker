@@ -1,3 +1,5 @@
+import { BASE_URL } from "./authenticate";
+
 const createTask = async () => {
   try {
     const name = document.getElementById("title").value.trim();
@@ -6,7 +8,7 @@ const createTask = async () => {
     }
     const userID = localStorage.getItem("userID");
     console.log(userID);
-    const response = await fetch(`http://localhost:5000/api/tasks/addtasks/${userID}`, {
+    const response = await fetch(`${BASE_URL}/api/tasks/addtasks/${userID}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name }),
