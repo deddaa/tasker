@@ -1,4 +1,4 @@
-export const BASE_URL = "https://tasker-h4e7.onrender.com"
+const BASE_URL = "https://tasker-h4e7.onrender.com"
 
 const loginFormBox = document.getElementById("loginFormBox");
 const registerFormBox = document.getElementById("registerFormBox");

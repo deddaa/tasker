@@ -1,4 +1,4 @@
-import { BASE_URL } from "./authenticate";
+const BASE_URL = "https://tasker-h4e7.onrender.com"
 
 const addbtn = document.getElementById("add-btn");
 addbtn.addEventListener("click", () => {
