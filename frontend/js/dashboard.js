@@ -114,7 +114,7 @@ const goBackTask = async (id, CurrentStatus) => {
   console.log(id, newStatus);
   try {
     const response = await fetch(
-      `${BASE_URL}/api/tasks/puttasks/${id}`,
+      `/api/tasks/puttasks/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -167,7 +167,7 @@ const deleteTask = async (id) => {
   try {
     console.log(id);
     const response = await fetch(
-      `${BASE_URL}/api/tasks/deletetasks/${id}`,
+      `/api/tasks/deletetasks/${id}`,
       {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
