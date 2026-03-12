@@ -65,7 +65,7 @@ const getTask = async () => {
     const userID = localStorage.getItem("userID");
     console.log(userID);
     const response = await fetch(
-      `${BASE_URL}/api/tasks/tasks/${userID}`,
+      `/api/tasks/tasks/${userID}`,
       {},
     );
 
@@ -83,7 +83,7 @@ const updateTask = async (id, CurrentStatus) => {
   console.log(id, newStatus);
   try {
     const response = await fetch(
-      `${BASE_URL}/api/tasks/puttasks/${id}`,
+      `/api/tasks/puttasks/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -146,7 +146,7 @@ const saveEdit = async () => {
   }
 
   try {
-    const response = await fetch(`${BASE_URL}/api/tasks/puttaskname/${currentEditId}`, {
+    const response = await fetch(`/api/tasks/puttaskname/${currentEditId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

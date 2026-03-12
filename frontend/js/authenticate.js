@@ -27,7 +27,7 @@ registerFormBox.addEventListener('submit', async (event) => {
     const password = document.getElementById("password-register").value;
 
     try{
-        const response = await fetch(`${BASE_URL}/api/auth/register`, {
+        const response = await fetch(`/api/auth/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ mail: email, password })
